@@ -1,0 +1,125 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "globals": {
+    "document": true,
+    "window": true
+  },
+  "settings": {
+    "import/external-module-folders": [
+      "node_modules",
+      "src"
+    ]
+  },
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "never",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ],
+    "jsx-a11y/no-static-element-interactions": "off",
+    "complexity": [
+      "error",
+      8
+    ],
+    "class-methods-use-this": "off",
+    "no-console": [
+      "error",
+      { allow: [
+          "warn",
+          "error"
+        ]
+      }
+    ],
+
+    # This uses airbnb's max-len config except for ignoreStrings/ignoreTemplateLiterals. We set
+    # those to false so the linter doesn't ignore lines like `reallyLongLine.get('foo')`.
+    "max-len": [
+      "error",
+      100,
+      2,
+      {
+        "ignoreUrls": true,
+        "ignoreComments": false,
+        "ignoreRegExpLiterals": true,
+        "ignoreStrings": false,
+        "ignoreTemplateLiterals": false,
+      }
+    ],
+    "import/no-named-as-default-member": "off",
+
+    # These rules us to safely import packages from `/src`
+    "import/no-unresolved": [
+      "error",
+      {
+      ignore: [
+          "utilities",
+          "models",
+          "components",
+          "errors",
+          "api",
+          "analytics",
+          "assets",
+          "settings",
+          "notifications"
+        ]
+      }
+    ],
+    "import/no-extraneous-dependencies": "off",
+    "import/extensions": "off",
+
+    # When using interfaces, we may not use all the arguments.
+    #
+    "no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "none"
+      }
+    ],
+
+    # Having this rule on could lead to deep, difficult to understand destructuring.
+    #
+    "prefer-destructuring": "off",
+
+    # Without this, lots of inline JSX looks terrible.
+    #
+    "function-paren-newline": [
+      "error",
+      "consistent"
+    ],
+
+    #
+    "object-curly-newline": [
+      "error",
+      {
+        "consistent": true
+      }
+    ],
+    "arrow-body-style": 0
+  },
+  "overrides": {
+    "files": [
+      "**/*.spec.js"
+    ],
+    "plugins": [
+      "jest"
+    ],
+    "env": {
+      "jest/globals": true,
+    },
+    "rules": {}
+  }
+}
