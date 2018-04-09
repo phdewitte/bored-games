@@ -1,0 +1,9 @@
+.top-rated {
+  height: 35vh;
+  display: flex;
+  list-style: none;
+  overflow-X: scroll; }
+  .top-rated__game {
+    display: flex;
+    flex-direction: column;
+    margin: 0 1rem; }
