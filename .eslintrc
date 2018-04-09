@@ -48,7 +48,7 @@
     # those to false so the linter doesn't ignore lines like `reallyLongLine.get('foo')`.
     "max-len": [
       "error",
-      100,
+      160,
       2,
       {
         "ignoreUrls": true,

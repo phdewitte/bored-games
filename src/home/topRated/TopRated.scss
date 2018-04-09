@@ -1,0 +1,17 @@
+.top-rated {
+  height: 35vh;
+  display: flex;
+  list-style: none;
+  overflow-X: scroll;
+
+  &__game {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 1rem;    
+  }
+
+  // &__thumbnail {
+    // TODO: Normalize sizes
+  // }
+}

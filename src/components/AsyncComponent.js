@@ -21,7 +21,9 @@ export default function asyncComponent(importComponent) {
     render() {
       const C = this.state.component;
 
-      return C ? <C {...this.props} /> : <p>Loading...</p>;
+      return C
+        ? <C {...this.props} />
+        : <p>Loading...</p>; // TODO: replace me with a spinner/loading component
     }
   }
 
