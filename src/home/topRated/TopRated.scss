@@ -1,8 +1,17 @@
 .top-rated {
   height: 35vh;
-  display: flex;
-  list-style: none;
-  overflow-X: scroll;
+
+  &__header {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    overflow-X: scroll;
+    padding: 0;
+  }
 
   &__game {
     display: flex;

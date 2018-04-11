@@ -16,9 +16,12 @@ const TopRated = ({ topRated }) => {
   });
 
   return (
-    <ul className="top-rated">
-      {gameElements}
-    </ul>
+    <div className="top-rated">
+      <h2 className="top-rated__header">Top 10</h2>
+      <ul className="top-rated__list">
+        {gameElements}
+      </ul>
+    </div>
   );
 };
 
@@ -27,9 +30,9 @@ TopRated.propTypes = {
     PropTypes.shape({
       id: PropTypes.string,
       name: PropTypes.string,
-      rank: PropTypes.string,
+      rank: PropTypes.number,
       thumbnail: PropTypes.string,
-      year: PropTypes.string,
+      year: PropTypes.number,
     }),
   ).isRequired,
 };
