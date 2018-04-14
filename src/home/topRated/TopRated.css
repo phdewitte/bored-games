@@ -1,8 +1,13 @@
 .top-rated {
-  height: 35vh;
-  display: flex;
-  list-style: none;
-  overflow-X: scroll; }
+  height: 35vh; }
+  .top-rated__header {
+    display: flex;
+    justify-content: center; }
+  .top-rated__list {
+    display: flex;
+    list-style: none;
+    overflow-X: scroll;
+    padding: 0; }
   .top-rated__game {
     display: flex;
     flex-direction: column;

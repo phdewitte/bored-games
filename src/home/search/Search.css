@@ -1,0 +1,17 @@
+.search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .search__header {
+    display: flex;
+    justify-content: center; }
+  .search__form {
+    display: flex;
+    justify-content: center; }
+  .search__input {
+    width: 80vw;
+    border: 1px solid gray;
+    padding: .5rem; }
+  .search__results {
+    height: 30vh;
+    overflow-y: scroll; }

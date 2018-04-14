@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchTopRated as fetchTopRatedAction } from './ducks';
 import TopRated from './topRated';
+import Search from './search';
 
 class Home extends PureComponent {
   componentWillMount() {
@@ -18,6 +19,7 @@ class Home extends PureComponent {
       <div>
         {this.renderLoadingComponent()}
         <TopRated topRated={this.props.topRated} />
+        <Search />
       </div>
     );
   }

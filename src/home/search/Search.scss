@@ -1,0 +1,26 @@
+.search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__header {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: center;
+  }
+  
+  &__input {
+    width: 80vw;
+    border: 1px solid gray;
+    padding: .5rem;
+  }
+  
+  &__results {
+    height: 30vh;
+    overflow-y: scroll;
+  }
+}
