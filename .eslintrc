@@ -3,7 +3,8 @@
   "extends": "airbnb",
   "globals": {
     "document": true,
-    "window": true
+    "window": true,
+    "it": true
   },
   "settings": {
     "import/external-module-folders": [
