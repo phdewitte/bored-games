@@ -1,4 +1,7 @@
+import polyfill from 'es6-promise';
 import isomorphicFetch from 'isomorphic-fetch';
+
+polyfill.polyfill();
 
 const apiBase = 'https://www.boardgamegeek.com/xmlapi2';
 

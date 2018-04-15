@@ -1,0 +1,39 @@
+.game {
+  display: flex;
+  flex-direction: column;
+
+  &__name {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__year {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__players {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__attribute-collection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  &__attribute-collection-member {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 .5rem;
+  }
+
+  &__add-button {
+    border: 1px solid blue;
+    background-color: transparent;
+    margin: 1rem 0;
+  }
+}

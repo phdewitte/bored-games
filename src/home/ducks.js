@@ -14,18 +14,16 @@ const handleFetchTopRated = (state) => {
   }));
 };
 
-const handleFetchTopRatedSuccess = (state, action) => ({ ...state, isLoading: false, topRated: action.payload.topRated });
-const handleFetchTopRatedFailure = (state, action) => ({ ...state, isLoading: false, error: action.error.toString() });
-
 const reducers = {
   FETCH_TOP_RATED: (state, action) => handleFetchTopRated(state),
-  FETCH_TOP_RATED_SUCCESS: (state, action) => handleFetchTopRatedSuccess(state, action),
-  FETCH_TOP_RATED_FAILURE: (state, action) => handleFetchTopRatedFailure(state, action),
+  FETCH_TOP_RATED_SUCCESS: (state, action) => ({ ...state, isLoading: false, topRated: action.payload.topRated }),
+  FETCH_TOP_RATED_FAILURE: (state, action) => ({ ...state, isLoading: false, error: action.error.toString() }),
 };
 
 const initialState = {
   isLoading: false,
   topRated: [],
+  error: null,
 };
 
 const homeReducer = (state = initialState, action = {}) => {
