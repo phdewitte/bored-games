@@ -1,17 +1,21 @@
 import React from 'react';
 // import ErrorBoundary from 'components';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+import { ConnectedRouter } from 'react-router-redux';
+import { history } from './store';
 import AsyncComponent from './components/AsyncComponent';
 
 const Home = AsyncComponent(() => import('./home/Home'));
+const GameDetail = AsyncComponent(() => import('./gameDetail/GameDetail'));
 
 const Router = () => (
   // <ErrorBoundary>
-  <BrowserRouter>
+  <ConnectedRouter history={history}>
     <Switch>
-      <Route path="/" component={Home} />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/games/:gameId" component={GameDetail} />
     </Switch>
-  </BrowserRouter>
+  </ConnectedRouter>
   // </ErrorBoundary>
 );
 

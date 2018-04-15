@@ -1,13 +1,18 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import connect from '../util/connect';
 import { fetchTopRated as fetchTopRatedAction } from './ducks';
 import TopRated from './topRated';
 import Search from './search';
 
+
 class Home extends PureComponent {
   componentWillMount() {
     this.props.fetchTopRated();
+  }
+
+  onViewGameDetailClick = (gameId) => {
+    this.props.history.push(`/games/${gameId}`);
   }
 
   renderLoadingComponent() {
@@ -15,10 +20,17 @@ class Home extends PureComponent {
   }
 
   render() {
+    const { topRated } = this.props;
+
     return (
       <div>
         {this.renderLoadingComponent()}
-        <TopRated topRated={this.props.topRated} />
+
+        <TopRated
+          topRated={topRated}
+          onViewGameDetailClick={this.onViewGameDetailClick}
+        />
+
         <Search />
       </div>
     );
@@ -29,6 +41,9 @@ Home.propTypes = {
   isLoading: PropTypes.bool,
   topRated: PropTypes.arrayOf(PropTypes.object),
   fetchTopRated: PropTypes.func.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }).isRequired,
 };
 
 Home.defaultProps = {
@@ -39,4 +54,4 @@ Home.defaultProps = {
 const mapStateToProps = state => ({ topRated: state.homePage.topRated });
 const mapDispatchToProps = dispatch => ({ fetchTopRated: () => dispatch(fetchTopRatedAction()) });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps, Home);

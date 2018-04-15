@@ -1,8 +1,13 @@
 import { createStore, compose, applyMiddleware } from 'redux';
 import { install as installReduxLoop } from 'redux-loop';
+import createHistory from 'history/createBrowserHistory';
+import { routerMiddleware } from 'react-router-redux';
 import rootReducer from './rootReducer';
 
-const middlewares = [];
+const history = createHistory();
+const historyMiddleware = routerMiddleware(history);
+
+const middlewares = [historyMiddleware];
 
 if (process.env.NODE_ENV === 'development') {
   // eslint-disable-next-line
@@ -17,5 +22,7 @@ const enhancer = compose(
 );
 
 const store = createStore(rootReducer, {}, enhancer);
+
+export { history };
 
 export default store;

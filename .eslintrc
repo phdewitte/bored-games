@@ -4,13 +4,15 @@
   "globals": {
     "document": true,
     "window": true,
-    "it": true
+    "it": true,
+    "expect": true
   },
   "settings": {
     "import/external-module-folders": [
       "node_modules",
       "src"
-    ]
+    ],
+    "import/resolver": "webpack"
   },
   "rules": {
     "react/jsx-filename-extension": [
@@ -62,22 +64,7 @@
     "import/no-named-as-default-member": "off",
 
     # These rules us to safely import packages from `/src`
-    "import/no-unresolved": [
-      "error",
-      {
-      ignore: [
-          "utilities",
-          "models",
-          "components",
-          "errors",
-          "api",
-          "analytics",
-          "assets",
-          "settings",
-          "notifications"
-        ]
-      }
-    ],
+    "import/no-unresolved": [0],
     "import/no-extraneous-dependencies": "off",
     "import/extensions": "off",
 
