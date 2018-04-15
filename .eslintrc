@@ -12,7 +12,6 @@
       "node_modules",
       "src"
     ],
-    "import/resolver": "webpack"
   },
   "rules": {
     "react/jsx-filename-extension": [
@@ -64,7 +63,6 @@
     "import/no-named-as-default-member": "off",
 
     # These rules us to safely import packages from `/src`
-    "import/no-unresolved": [0],
     "import/no-extraneous-dependencies": "off",
     "import/extensions": "off",
 
