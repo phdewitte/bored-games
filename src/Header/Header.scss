@@ -1,6 +1,5 @@
 .header {
   display: flex;
-  flex-direction: row;
   justify-content: center;
 
   background-color: #fff;
@@ -8,7 +7,10 @@
 
   box-shadow: 0 .25rem .5rem rgb(182, 182, 182);
 
+  font-family: 'Russo One', sans-serif;
+  color: rgb(10, 41, 66);
+
   h1 {
-    font-family: 'Russo One', sans-serif;
+    margin: .5rem;
   }
 }
