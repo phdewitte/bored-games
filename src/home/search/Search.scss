@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 
   &__header {
     display: flex;
@@ -15,12 +16,21 @@
   
   &__input {
     width: 80vw;
-    border: 1px solid gray;
+    border: 1px solid rgb(228, 228, 228);;
     padding: .5rem;
+    border-radius: 4px;  
   }
   
   &__results {
-    height: 30vh;
+    max-height: 30vh;
+    width: 80vw;
+    padding: .5rem;
+
+    background-color: rgb(255, 255, 255);
+    box-shadow: inset 0 0 .5rem rgb(182, 182, 182);
+    border-radius: 4px;
+
+    list-style: none;
     overflow-y: scroll;
   }
 }

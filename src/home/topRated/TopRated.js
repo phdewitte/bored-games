@@ -3,26 +3,24 @@ import PropTypes from 'prop-types';
 import './TopRated.css';
 
 const TopRated = ({ topRated, onViewGameDetailClick }) => {
-  // TODO: Update limit to a config setting instead of hardcoding
-  const topRatedSelection = topRated.slice(0, 25);
-
-  const gameElements = topRatedSelection.map((game) => {
+  const gameElements = topRated.map((game) => {
     return (
       // TODO - Research mobile-specific accesibility compliment to onClick
       // eslint-disable-next-line
-      <li className="top-rated__game" key={game.id} onClick={() => onViewGameDetailClick(game.id)}>
+      <div className="top-rated__card" key={game.id} onClick={() => onViewGameDetailClick(game.id)}>
         <img className="top-rated__thumbnail" src={game.thumbnail} alt={game.name} />
-        <span className="top-rated__name">{game.name}</span>
-      </li>
+        <h2 className="top-rated__name">{game.name}</h2>
+        <h3 className="top-rated__year">{game.year}</h3>
+      </div>
     );
   });
 
   return (
     <div className="top-rated">
-      <h2 className="top-rated__header">Top 10</h2>
-      <ul className="top-rated__list">
+      <h2 className="top-rated__header">BoardGameGeek Hotness&hellip;</h2>
+      <div className="top-rated__list">
         {gameElements}
-      </ul>
+      </div>
     </div>
   );
 };

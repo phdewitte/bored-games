@@ -2,4 +2,13 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+
+  background-color: #fff;
+  width: 100%;
+
+  box-shadow: 0 .25rem .5rem rgb(182, 182, 182);
+
+  h1 {
+    font-family: 'Russo One', sans-serif;
+  }
 }
