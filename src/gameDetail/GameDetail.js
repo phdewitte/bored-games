@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import connect from '../util/connect';
-import { fetchGame as fetchGameAction } from './ducks.js';
+import { fetchGame as fetchGameAction } from './ducks';
 import './GameDetail.css';
 
 class GameDetail extends PureComponent {
