@@ -1,39 +1,48 @@
 .game {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+
+  padding: 1rem;
+  margin: 1rem;
+
+  background-color: #fff;    
+  box-shadow: 0 0 1rem rgb(182, 182, 182);
+  border-radius: 4px;
 
   &__name {
     display: flex;
     justify-content: center;
+    margin: 0;
+    color: rgb(28, 76, 114);
+    text-align: center;
   }
 
   &__year {
     display: flex;
     justify-content: center;
+    margin: .5rem;
   }
 
   &__players {
     display: flex;
     justify-content: center;
+    margin: .5rem;
   }
 
   &__attribute-collection {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-  }
-  
-  &__attribute-collection-member {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0 .5rem;
+    text-align: center;
   }
 
   &__add-button {
-    border: 1px solid blue;
-    background-color: transparent;
-    margin: 1rem 0;
+    border-radius: 4px;
+    background-color: rgb(36, 94, 141);
+    color: #fff;
+    margin: .5rem 0;
+    height: 2rem;
+    font-size: 1rem;
   }
 }

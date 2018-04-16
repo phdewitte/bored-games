@@ -66,6 +66,15 @@ const formatObject = (json) => {
     }
   });
 
+  // Game objects may contain multiple language versions of the name
+  if (!formattedGame.name) {
+    json.name.forEach((nameObject) => {
+      if (nameObject._attributes.type === 'primary') {
+        formattedGame.name = nameObject._attributes.value;
+      }
+    });
+  }
+
   return formattedGame;
 };
 

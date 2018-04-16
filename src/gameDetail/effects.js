@@ -1,3 +1,4 @@
+import { decode } from 'he';
 import fetch from '../util/fetch';
 import xmlToJs from '../util/xmlToJs';
 
@@ -7,7 +8,7 @@ const transform = (data) => {
   const transformed = {
     id: parsed.id,
     name: parsed.name,
-    description: parsed.description,
+    description: decode(parsed.description),
     year: parsed.yearpublished,
     image: parsed.image,
     thumbnail: parsed.thumbnail,
