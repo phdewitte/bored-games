@@ -1,5 +1,5 @@
 .top-rated {
-  height: 35vh;
+  height: 100%;
 
   &__header {
     display: flex;
@@ -8,16 +8,45 @@
 
   &__list {
     display: flex;
-    list-style: none;
     overflow-X: scroll;
+    margin: 1rem 0;  
+    // TODO: Soften the l/r edges
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+
+    background-color: #fff;    
+    box-shadow: 0 0 1rem rgb(182, 182, 182);
+    border-radius: 4px;
+
+    height: 40vh;
+    width: 50vw;
+    
+    padding: 1rem;
+    margin: .5rem;
+  }
+
+  &__name {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+
+    line-height: 1.3;
+    
+    margin: 0;
     padding: 0;
   }
 
-  &__game {
+  &__year {
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
 
-    margin: 0 1rem;    
+    margin: 0;
+    padding: 0;
   }
 
   // &__thumbnail {

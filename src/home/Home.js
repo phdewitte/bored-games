@@ -5,7 +5,6 @@ import { fetchTopRated as fetchTopRatedAction } from './ducks';
 import TopRated from './topRated';
 import Search from './search';
 
-
 class Home extends PureComponent {
   componentWillMount() {
     this.props.fetchTopRated();
@@ -23,15 +22,16 @@ class Home extends PureComponent {
     const { topRated } = this.props;
 
     return (
-      <div>
+      <div className="home">
         {this.renderLoadingComponent()}
+
+        <Search />
 
         <TopRated
           topRated={topRated}
           onViewGameDetailClick={this.onViewGameDetailClick}
         />
 
-        <Search />
       </div>
     );
   }

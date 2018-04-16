@@ -27,19 +27,27 @@ class GameDetail extends PureComponent {
 
         <div className="game__attribute-collection">
           {`Categor${categories.length > 1 ? 'ies:' : 'y:'}`}
-          {categories.map(category => <span className="game__attribute-collection-member">{category}</span>)}
+          {categories.map(category => (
+            <span key={category} className="game__attribute-collection-member">{category}</span>
+          ))}
         </div>
         <div className="game__attribute-collection">
           {`Mechanic${mechanics.length > 1 ? 's:' : ':'}`}
-          {mechanics.map(mechanic => <span className="game__attribute-collection-member">{mechanic}</span>)}
+          {mechanics.map(mechanic => (
+            <span key={mechanic} className="game__attribute-collection-member">{mechanic}</span>
+          ))}
         </div>
         <div className="game__attribute-collection">
           {`Artist${artists.length > 1 ? 's:' : ':'}`}
-          {artists.map(artist => <span className="game__attribute-collection-member">{artist}</span>)}
+          {artists.map(artist => (
+            <span key={artist} className="game__attribute-collection-member">{artist}</span>
+          ))}
         </div>
         <div className="game__attribute-collection">
           {`Publisher${publishers.length > 1 ? 's:' : ':'}`}
-          {publishers.map(publisher => <span className="game__attribute-collection-member">{publisher}</span>)}
+          {publishers.map(publisher => (
+            <span key={publisher} className="game__attribute-collection-member">{publisher}</span>
+          ))}
         </div>
 
         <h5 className="game__players">{game.minPlayers} - {game.maxPlayers} players</h5>

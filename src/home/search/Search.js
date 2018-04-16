@@ -30,10 +30,32 @@ class Search extends PureComponent {
     }
   };
 
+  onResultClick = (gameId) => {
+    this.props.history.push(`/games/${gameId}`);
+  }
+
   get searchResults() {
     const { searchResults } = this.props;
 
-    return searchResults.map(result => <li key={result.id}>{result.name} - {result.year}</li>);
+    if (!searchResults.length) {
+      return null;
+    }
+
+    return (
+      <ul className="search__results">
+        {searchResults.map(result => (
+          // TODO - Research mobile-specific accesibility compliment to onClick
+          // eslint-disable-next-line
+          <li
+            key={result.id}
+            onClick={() => this.onResultClick(result.id)}
+          >
+            {result.name} - {result.year}
+          </li>
+        ))
+      }
+      </ul>
+    );
   }
 
   render() {
@@ -52,9 +74,7 @@ class Search extends PureComponent {
             />
           </label>
         </form>
-        <ul className="search__results">
-          {this.searchResults}
-        </ul>
+        {this.searchResults}
       </div>
     );
   }
@@ -70,6 +90,9 @@ Search.propTypes = {
       year: PropTypes.number,
     }),
   ),
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }).isRequired,
 };
 
 Search.defaultProps = {
