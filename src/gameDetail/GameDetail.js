@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import connect from '../util/connect';
 import { fetchGame as fetchGameAction } from './ducks';
+import { Loading } from '../components';
 import './GameDetail.css';
 
 class GameDetail extends PureComponent {
@@ -27,7 +28,7 @@ class GameDetail extends PureComponent {
     const { game } = this.props;
 
     if (!game) {
-      return <div>Loading...</div>;
+      return <Loading />;
     }
 
     const { name, year, categories, mechanics, publishers, artists } = game;

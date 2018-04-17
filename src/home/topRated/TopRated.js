@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Loading } from '../../components';
 import './TopRated.css';
 
-const TopRated = ({ topRated, onViewGameDetailClick }) => {
+const TopRated = ({ isLoading, topRated, onViewGameDetailClick }) => {
   const gameElements = topRated.map((game) => {
     return (
       // TODO - Research mobile-specific accesibility compliment to onClick
@@ -18,14 +19,13 @@ const TopRated = ({ topRated, onViewGameDetailClick }) => {
   return (
     <div className="top-rated">
       <h2 className="top-rated__header">BoardGameGeek Hotness&hellip;</h2>
-      <div className="top-rated__list">
-        {gameElements}
-      </div>
+      {isLoading ? <Loading /> : <div className="top-rated__list">{gameElements}</div>}
     </div>
   );
 };
 
 TopRated.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
   topRated: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
