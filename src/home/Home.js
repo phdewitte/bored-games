@@ -14,31 +14,24 @@ class Home extends PureComponent {
     this.props.history.push(`/games/${gameId}`);
   }
 
-  renderLoadingComponent() {
-    return this.props.isLoading ? <div>Loading Top Rated Games&hellip;</div> : null;
-  }
-
   render() {
-    const { topRated } = this.props;
+    const { topRated, isLoading } = this.props;
 
     return (
       <div className="home">
-        {this.renderLoadingComponent()}
-
         <Search />
-
         <TopRated
+          isLoading={isLoading}
           topRated={topRated}
           onViewGameDetailClick={this.onViewGameDetailClick}
         />
-
       </div>
     );
   }
 }
 
 Home.propTypes = {
-  isLoading: PropTypes.bool,
+  isLoading: PropTypes.bool.isRequired,
   topRated: PropTypes.arrayOf(PropTypes.object),
   fetchTopRated: PropTypes.func.isRequired,
   history: PropTypes.shape({
@@ -47,11 +40,13 @@ Home.propTypes = {
 };
 
 Home.defaultProps = {
-  isLoading: false,
   topRated: [],
 };
 
-const mapStateToProps = state => ({ topRated: state.homePage.topRated });
+const mapStateToProps = state => ({
+  isLoading: state.homePage.isLoading,
+  topRated: state.homePage.topRated,
+});
 const mapDispatchToProps = dispatch => ({ fetchTopRated: () => dispatch(fetchTopRatedAction()) });
 
 export default connect(mapStateToProps, mapDispatchToProps, Home);
