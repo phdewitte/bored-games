@@ -15,6 +15,7 @@
   &__card {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     flex: 0 0 auto;
 
     background-color: #fff;    
@@ -23,6 +24,7 @@
 
     height: 40vh;
     width: 50vw;
+    max-width: 200px;
     
     padding: 1rem;
     margin: .5rem;
@@ -46,7 +48,27 @@
     padding: 0;
   }
 
-  // &__thumbnail {
-    // TODO: Normalize sizes
-  // }
+  &__add-button {
+    border-radius: 4px;
+    background-color: rgb(36, 94, 141);
+
+    color: #fff;
+    font-size: 1rem;
+
+    margin: .5rem 0;
+    height: 2rem;
+  }
+
+  &__content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 0 1 auto;
+  }
+  
+  &__thumbnail {
+    display: flex;
+    align-self: center;
+    flex: 0 1 auto;
+  }
 }
