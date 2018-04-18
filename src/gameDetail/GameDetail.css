@@ -21,15 +21,27 @@
     display: flex;
     justify-content: center;
     margin: .5rem; }
+  .game__image {
+    display: flex;
+    align-self: center;
+    flex: 1 1 auto;
+    max-height: 380px;
+    max-width: 760px;
+    width: 80vw;
+    margin: 1rem 0; }
   .game__attribute-collection {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     text-align: center; }
+  .game__collection-type {
+    margin: 0 .5rem; }
   .game__add-button {
+    display: flex;
+    align-self: center;
     border-radius: 4px;
     background-color: #245e8d;
     color: #fff;
+    font-size: 1rem;
     margin: .5rem 0;
-    height: 2rem;
-    font-size: 1rem; }
+    height: 2rem; }

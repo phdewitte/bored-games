@@ -1,2 +1,4 @@
 .loading {
-  margin: 8vh 35vw; }
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem; }

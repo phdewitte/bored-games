@@ -47,7 +47,7 @@ class GameDetail extends PureComponent {
 
         <button className="game__add-button">Add to list</button>
 
-        <img src={game.thumbnail} alt={game.name} />
+        <img src={game.image} alt={game.name} className="game__image" />
 
         {/* NEED TO ESCAPE SPECIAL XML CHARACTERS */}
         <p>{game.description}</p>
