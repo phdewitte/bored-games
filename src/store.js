@@ -9,7 +9,7 @@ const historyMiddleware = routerMiddleware(history);
 
 const middlewares = [historyMiddleware];
 
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV !== 'production') {
   // eslint-disable-next-line
   const { logger } = require('redux-logger');
   // Logger must be last in middleware chain

@@ -7,7 +7,9 @@
   }
 
   &__list {
+    height: 100%;
     display: flex;
+    flex: 1 1 auto;
     overflow-X: scroll;
     margin: 1rem 0;  
   }
@@ -22,9 +24,10 @@
     box-shadow: 0 0 1rem rgb(182, 182, 182);
     border-radius: 4px;
 
-    height: 40vh;
+    height: 50vh;
     width: 50vw;
     max-width: 200px;
+    max-height: 300px;
     
     padding: 1rem;
     margin: .5rem;
@@ -36,16 +39,14 @@
     justify-content: center;
     text-align: center;
     
-    margin: 0;
-    padding: 0;
+    margin: .5rem 0;
   }
 
   &__year {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 
-    margin: 0;
-    padding: 0;
+    margin: 1rem 0;
   }
 
   &__add-button {
@@ -55,20 +56,12 @@
     color: #fff;
     font-size: 1rem;
 
-    margin: .5rem 0;
+    margin: 0;
     height: 2rem;
-  }
-
-  &__content-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex: 0 1 auto;
   }
   
   &__thumbnail {
-    display: flex;
-    align-self: center;
-    flex: 0 1 auto;
+    width: auto;
+    height: auto;
   }
 }

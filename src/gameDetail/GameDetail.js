@@ -25,9 +25,15 @@ class GameDetail extends PureComponent {
   }
 
   render() {
-    const { game } = this.props;
+    const { game, isLoading, history, error } = this.props;
 
-    if (!game) {
+    if (error) {
+      history.push('/error');
+
+      return null;
+    }
+
+    if (isLoading || !game) {
       return <Loading />;
     }
 
@@ -49,7 +55,6 @@ class GameDetail extends PureComponent {
 
         <img src={game.image} alt={game.name} className="game__image" />
 
-        {/* NEED TO ESCAPE SPECIAL XML CHARACTERS */}
         <p>{game.description}</p>
 
         <div className="game__attribute-collection">
@@ -70,6 +75,8 @@ class GameDetail extends PureComponent {
 }
 
 GameDetail.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
+  error: PropTypes.string,
   game: PropTypes.shape({
     id: PropTypes.string,
     thumbnail: PropTypes.string,
@@ -86,14 +93,19 @@ GameDetail.propTypes = {
       gameId: PropTypes.string,
     }),
   }).isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }).isRequired,
 };
 
 GameDetail.defaultProps = {
   game: null,
+  error: null,
 };
 
 const mapStateToProps = state => ({
   isLoading: state.gameDetail.isLoading,
+  error: state.gameDetail.error,
   game: state.gameDetail.game,
 });
 

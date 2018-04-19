@@ -4,7 +4,9 @@
     display: flex;
     justify-content: center; }
   .top-rated__list {
+    height: 100%;
     display: flex;
+    flex: 1 1 auto;
     overflow-X: scroll;
     margin: 1rem 0; }
   .top-rated__card {
@@ -15,9 +17,10 @@
     background-color: #fff;
     box-shadow: 0 0 1rem #b6b6b6;
     border-radius: 4px;
-    height: 40vh;
+    height: 50vh;
     width: 50vw;
     max-width: 200px;
+    max-height: 300px;
     padding: 1rem;
     margin: .5rem; }
   .top-rated__name {
@@ -25,26 +28,18 @@
     flex-direction: row;
     justify-content: center;
     text-align: center;
-    margin: 0;
-    padding: 0; }
+    margin: .5rem 0; }
   .top-rated__year {
     display: flex;
-    justify-content: space-around;
-    margin: 0;
-    padding: 0; }
+    justify-content: center;
+    margin: 1rem 0; }
   .top-rated__add-button {
     border-radius: 4px;
     background-color: #245e8d;
     color: #fff;
     font-size: 1rem;
-    margin: .5rem 0;
+    margin: 0;
     height: 2rem; }
-  .top-rated__content-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex: 0 1 auto; }
   .top-rated__thumbnail {
-    display: flex;
-    align-self: center;
-    flex: 0 1 auto; }
+    width: auto;
+    height: auto; }

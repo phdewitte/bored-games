@@ -1,0 +1,6 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  text-align: center; }
+  .error h3 {
+    margin: 0; }
