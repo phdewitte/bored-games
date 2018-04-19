@@ -1,3 +1,6 @@
+/* TODO - Research mobile-specific accesibility compliment to onClick */
+/* eslint-disable  */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Loading } from '../../components';
@@ -7,17 +10,14 @@ const TopRated = ({ isLoading, topRated, onViewGameDetailClick }) => {
   const gameElements = topRated.map((game) => {
     return (
       <div className="top-rated__card" key={game.id}>
-        {/* TODO - Research mobile-specific accesibility compliment to onClick */}
-        {/* eslint-disable jsx-a11y/click-events-have-key-events */}
-        <div className="top-rated__content-wrapper" onClick={() => onViewGameDetailClick(game.id)}>
-          <img
-            className="top-rated__thumbnail"
-            src={game.thumbnail}
-            alt={game.name}
-          />
-          <h2 className="top-rated__name">{game.name}</h2>
-          <h3 className="top-rated__year">{game.year}</h3>
-        </div>
+        <img
+          onClick={() => onViewGameDetailClick(game.id)}
+          className="top-rated__thumbnail"
+          src={game.thumbnail}
+          alt={game.name}
+        />
+        <h3 className="top-rated__name">{game.name}</h3>
+        <h3 className="top-rated__year">{game.year}</h3>
         <button className="top-rated__add-button">Add to list</button>
       </div>
     );

@@ -12,7 +12,7 @@ const initialState = {
 };
 
 const handleFetchGame = (state, action) => {
-  const loadingState = { ...state, isLoading: true, game: null };
+  const loadingState = { ...state, isLoading: true, game: null, error: null };
 
   return loop(loadingState, Cmd.run(getGame, {
     successActionCreator: fetchGameSuccess,
@@ -24,7 +24,7 @@ const handleFetchGame = (state, action) => {
 const reducers = {
   FETCH_GAME: (state, action) => handleFetchGame(state, action),
   FETCH_GAME_SUCCESS: (state, action) => ({ ...state, isLoading: false, game: action.payload.game }),
-  FETCH_GAME_FAILURE: (state, action) => ({ ...state, isLoading: false, error: action.error }),
+  FETCH_GAME_FAILURE: (state, action) => ({ ...state, isLoading: false, error: action.error.toString() }),
 };
 
 const gameDetailReducer = (state = initialState, action = {}) => {

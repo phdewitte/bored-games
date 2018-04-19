@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Loading from './loading';
 
 export default function asyncComponent(importComponent) {
   class AsyncComponent extends Component {
@@ -23,7 +24,7 @@ export default function asyncComponent(importComponent) {
 
       return C
         ? <C {...this.props} />
-        : <p>Loading...</p>; // TODO: replace me with a spinner/loading component
+        : <Loading />;
     }
   }
 
