@@ -103,9 +103,6 @@
     "plugins": [
       "jest"
     ],
-    "env": {
-      "jest/globals": true,
-    },
     "rules": {}
   }
 }
