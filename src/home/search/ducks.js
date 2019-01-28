@@ -18,6 +18,7 @@ const handleSearch = (state, action) => {
 const initialState = {
   isLoading: false,
   searchResults: [],
+  error: null,
 };
 
 const reducers = {
