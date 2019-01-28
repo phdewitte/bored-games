@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import connect from '../util/connect';
 import { fetchGame as fetchGameAction } from './ducks';
 import { Loading } from '../components';
-import './GameDetail.css';
+import './GameDetail.scss';
 
 class GameDetail extends PureComponent {
   componentWillMount() {

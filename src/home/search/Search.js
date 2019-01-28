@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import connect from '../../util/connect';
 import { search as searchAction } from './ducks';
-import './Search.css';
+import './Search.scss';
 
 class Search extends PureComponent {
   constructor(props) {
