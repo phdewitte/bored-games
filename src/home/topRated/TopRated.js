@@ -4,7 +4,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Loading } from '../../components';
-import './TopRated.css';
+import './TopRated.scss';
 
 const TopRated = ({ isLoading, topRated, onViewGameDetailClick }) => {
   const gameElements = topRated.map((game) => {
