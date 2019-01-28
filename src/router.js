@@ -5,9 +5,9 @@ import { ConnectedRouter } from 'react-router-redux';
 import { history } from './store';
 import AsyncComponent from './components/AsyncComponent';
 
-const Home = AsyncComponent(() => import('./home/Home'));
-const GameDetail = AsyncComponent(() => import('./gameDetail/GameDetail'));
-const Error = AsyncComponent(() => import('./error/Error'));
+const Home = AsyncComponent(() => import('./home/Home' /* webpackChunkName: 'Home' */));
+const GameDetail = AsyncComponent(() => import('./gameDetail/GameDetail' /* webpackChunkName: 'GameDetail' */));
+const Error = AsyncComponent(() => import('./error/Error' /* webpackChunkName: 'Error' */));
 
 const Router = () => (
   // <ErrorBoundary>
